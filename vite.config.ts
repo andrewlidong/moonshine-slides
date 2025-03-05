@@ -4,27 +4,13 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/moonshine-slides/', // This should match your repository name
+  base: '/moonshine-slides/',
   optimizeDeps: {
-    include: ['prop-types', 'katex', 'react-katex']
+    include: ['prop-types']
   },
   build: {
     commonjsOptions: {
-      include: [/prop-types/, /node_modules/],
-      transformMixedEsModules: true
-    },
-    rollupOptions: {
-      external: ['prop-types'],
-      output: {
-        globals: {
-          'prop-types': 'PropTypes'
-        }
-      }
-    }
-  },
-  resolve: {
-    alias: {
-      'prop-types': 'prop-types'
+      include: [/prop-types/, /node_modules/]
     }
   }
 })
