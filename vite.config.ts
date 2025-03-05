@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/moonshine-slides/', // This should match your repository name
+  optimizeDeps: {
+    include: ['prop-types']
+  },
+  build: {
+    commonjsOptions: {
+      include: [/prop-types/, /node_modules/]
+    }
+  }
 })
