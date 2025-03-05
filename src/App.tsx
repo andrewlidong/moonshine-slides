@@ -319,16 +319,13 @@ function App() {
           <h2>Interactive Group Operations</h2>
           <div className="two-column">
             <div>
-              <p className="highlight">Try it yourself:</p>
               <ul>
                 <li>Click elements to select them</li>
                 <li>Choose between multiply and inverse operations</li>
                 <li>Observe how group operations work</li>
                 <li>Notice the closure property in action</li>
               </ul>
-            </div>
-            <div>
-              <InteractiveGroupOperation size={300} color="#2c3e50" />
+              <SymmetryVisualization size={300} />
             </div>
           </div>
         </section>
