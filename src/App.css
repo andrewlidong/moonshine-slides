@@ -20,6 +20,26 @@
 .highlight {
   color: var(--highlight-color);
   font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 
 /* Two-column layout */
@@ -28,6 +48,19 @@
   grid-template-columns: 1fr 1fr;
   gap: 2em;
   align-items: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.two-column > div {
+  padding: 1em;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.two-column > div:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -160,7 +193,15 @@
 
 /* Slide transitions */
 .reveal .slides section {
-  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+.reveal .slides section.past {
+  opacity: 0.3;
+}
+
+.reveal .slides section.future {
+  opacity: 0.3;
 }
 
 /* Custom slide backgrounds */
@@ -234,4 +275,342 @@ svg {
 
 .visualization-container svg {
   animation: fadeIn 0.5s ease-out;
+}
+
+/* Monster Group Visualization Animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    stroke-width: 1;
+    opacity: 0.8;
+  }
+  50% {
+    stroke-width: 2;
+    opacity: 1;
+  }
+  100% {
+    stroke-width: 1;
+    opacity: 0.8;
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 2px rgba(44, 62, 80, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 4px rgba(44, 62, 80, 0.5));
+  }
+  100% {
+    filter: drop-shadow(0 0 2px rgba(44, 62, 80, 0.3));
+  }
+}
+
+.monster-visualization {
+  animation: rotate 60s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(44, 62, 80, 0.2));
+}
+
+.monster-visualization .outer-circle {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.monster-visualization .middle-circle {
+  animation: pulse 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.monster-visualization .inner-circle {
+  animation: pulse 2s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.monster-visualization .connecting-line {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+.monster-visualization .symmetry-line {
+  animation: pulse 2s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.monster-visualization .labels {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.monster-visualization .title-label {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.monster-visualization .dimension-label {
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+.monster-visualization .dimension-unit {
+  animation: fadeIn 0.5s ease-out 0.4s both;
+}
+
+.monster-visualization .order-label {
+  animation: fadeIn 0.5s ease-out 0.6s both;
+}
+
+.monster-visualization .description-label {
+  animation: fadeIn 0.5s ease-out 0.8s both;
+}
+
+.monster-visualization .center-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.monster-visualization .corner-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+/* Highlight text animation */
+.highlight {
+  color: var(--highlight-color);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Rubik's Cube Visualization Animations */
+@keyframes rotateCube {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulsePiece {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes highlightPiece {
+  0% {
+    fill: var(--color);
+  }
+  50% {
+    fill: var(--highlight-color);
+  }
+  100% {
+    fill: var(--color);
+  }
+}
+
+.cube {
+  animation: rotateCube 20s linear infinite;
+}
+
+.cube .front-face {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.cube .grid-line {
+  animation: pulse 3s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.cube .corner-piece {
+  animation: pulsePiece 2s ease-in-out infinite;
+}
+
+.cube .edge-piece {
+  animation: pulsePiece 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.cube .center-piece {
+  animation: pulsePiece 2s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.cube .label {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* Enhanced slide transitions */
+.reveal .slides section {
+  transition: transform 0.8s ease, opacity 0.5s ease;
+}
+
+.reveal .slides section.past {
+  opacity: 0.3;
+  transform: translateX(-100%);
+}
+
+.reveal .slides section.future {
+  opacity: 0.3;
+  transform: translateX(100%);
+}
+
+/* Enhanced two-column layout */
+.two-column > div {
+  padding: 1.5em;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.two-column > div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Enhanced highlight text */
+.highlight {
+  color: var(--highlight-color);
+  font-weight: 500;
+  position: relative;
+  display: inline-block;
+  padding: 0.2em 0;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.highlight:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Enhanced list items */
+.reveal ul li {
+  margin: 0.8em 0;
+  padding-left: 1.5em;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.reveal ul li::before {
+  content: '•';
+  color: var(--highlight-color);
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.reveal ul li:hover {
+  transform: translateX(4px);
+}
+
+.reveal ul li:hover::before {
+  opacity: 1;
+}
+
+/* Enhanced headings */
+.reveal h1, .reveal h2, .reveal h3 {
+  position: relative;
+  display: inline-block;
+}
+
+.reveal h1::after, .reveal h2::after, .reveal h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--highlight-color);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.reveal h1:hover::after, .reveal h2:hover::after, .reveal h3:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Interactive Group Operation styles */
+.group-circle {
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.group-element {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.group-element:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 4px rgba(44, 62, 80, 0.3));
+}
+
+.element-label {
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.control-button {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.control-button:hover {
+  fill: var(--highlight-color);
+  stroke: var(--highlight-color);
+}
+
+.control-button:hover + .control-label {
+  fill: white;
+}
+
+.control-label {
+  font-size: 14px;
+  font-weight: 500;
+  pointer-events: none;
 }
