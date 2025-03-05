@@ -11,6 +11,7 @@ import { RubiksCubeVisualization } from './components/RubiksCubeVisualization'
 import { InteractiveGroupOperation } from './components/InteractiveGroupOperation'
 import './App.css'
 
+// Updated for deployment testing
 function App() {
   const deckRef = useRef<HTMLDivElement>(null)
 
