@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="300" fill="#1a1a1a"/>
+    
+    <!-- Arrowhead markers with fixed sizes -->
+    <defs>
+        <marker id="whiteArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+        </marker>
+        <marker id="redArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#ff4444"/>
+        </marker>
+        <marker id="blueArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#88ccff"/>
+        </marker>
+    </defs>
+    
+    <!-- Left side: Cube -->
+    <g transform="translate(100, 50)">
+        <!-- Front face -->
+        <path d="M 50,50 L 150,50 L 150,150 L 50,150 Z" fill="none" stroke="#ff4444" stroke-width="2"/>
+        <!-- Back face -->
+        <path d="M 100,0 L 200,0 L 200,100 L 100,100 Z" fill="none" stroke="#ff4444" stroke-width="2" opacity="0.5"/>
+        <!-- Connecting lines -->
+        <path d="M 50,50 L 100,0 M 150,50 L 200,0 M 150,150 L 200,100" stroke="#ff4444" stroke-width="2" opacity="0.7"/>
+        <!-- Rotation arrow -->
+        <path d="M 125,175 A 50,50 0 0 1 175,125" fill="none" stroke="#ff4444" stroke-width="2" marker-end="url(#redArrow)"/>
+        <text x="125" y="200" fill="#ffffff" font-size="16" text-anchor="middle">Cube Rotations</text>
+    </g>
+    
+    <!-- Center: Isomorphism -->
+    <g transform="translate(350, 100)">
+        <path d="M 0,50 L 100,50" stroke="#ffffff" stroke-width="2" marker-end="url(#whiteArrow)"/>
+        <text x="50" y="30" fill="#ffffff" font-size="20" text-anchor="middle">≅</text>
+    </g>
+    
+    <!-- Right side: Permutation -->
+    <g transform="translate(500, 50)">
+        <!-- Circles -->
+        <circle cx="50" cy="50" r="20" fill="none" stroke="#88ccff" stroke-width="2"/>
+        <circle cx="150" cy="50" r="20" fill="none" stroke="#88ccff" stroke-width="2"/>
+        <circle cx="50" cy="150" r="20" fill="none" stroke="#88ccff" stroke-width="2"/>
+        <circle cx="150" cy="150" r="20" fill="none" stroke="#88ccff" stroke-width="2"/>
+        
+        <!-- Single arrow paths -->
+        <path d="M 70,50 L 130,50" stroke="#88ccff" stroke-width="2" marker-end="url(#blueArrow)"/>
+        <path d="M 150,70 L 150,130" stroke="#88ccff" stroke-width="2" marker-end="url(#blueArrow)"/>
+        <path d="M 130,150 L 70,150" stroke="#88ccff" stroke-width="2" marker-end="url(#blueArrow)"/>
+        <path d="M 50,130 L 50,70" stroke="#88ccff" stroke-width="2" marker-end="url(#blueArrow)"/>
+        
+        <text x="100" y="200" fill="#ffffff" font-size="16" text-anchor="middle">Permutations</text>
+    </g>
+</svg> 
