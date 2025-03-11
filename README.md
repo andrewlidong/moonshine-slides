@@ -1,54 +1,64 @@
-# React + TypeScript + Vite
+# Monstrous Moonshine Presentation
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive presentation about the fascinating connection between the Monster Group and the j-function in mathematics. This presentation explores the history, discovery, and implications of Monstrous Moonshine.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This presentation covers:
+- The Monster Group and its properties
+- Modular Functions and the j-invariant
+- The discovery of Monstrous Moonshine
+- Borcherds' proof using string theory
+- Modern implications and open questions
 
-## Expanding the ESLint configuration
+## Local Development
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+1. Install dependencies:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+2. Start the development server:
+```bash
+npm run dev
 ```
+
+3. Open http://localhost:5174/moonshine-slides/ in your browser
+
+## Building for Production
+
+1. Update the base URL in `vite.config.ts` (already set to `/moonshine-slides/`)
+
+2. Build the project:
+```bash
+npm run build
+```
+
+This will create a `dist` directory with the production build.
+
+## Deployment
+
+To deploy to https://andrewlidong.xyz/moonshine-slides/:
+
+1. Build the project as described above
+2. Copy the contents of both `dist` and `public` directories to your web server:
+   - All built files from `dist/`
+   - All static assets from `public/` (images, etc.)
+
+## Controls
+
+- Arrow keys or Space: Navigate through slides
+- F: Toggle fullscreen
+- S: Show speaker notes
+- ?: Show all keyboard shortcuts
+
+## Credits
+
+This presentation uses:
+- [Reveal.js](https://revealjs.com/) for the presentation framework
+- [Vite](https://vitejs.dev/) for build tooling
+- [React](https://reactjs.org/) for UI components
+
+## License
+
+MIT License
