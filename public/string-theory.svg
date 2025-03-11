@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark background -->
+  <rect width="800" height="300" fill="#1a1a1a"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" fill="#88ccff" text-anchor="middle" font-size="24">String Theory Connection</text>
+  
+  <!-- Vibrating strings section -->
+  <g transform="translate(200,150)">
+    <!-- Sine wave string -->
+    <path d="M-100,0 C-75,-30 -25,30 0,0 C25,-30 75,30 100,0" 
+          stroke="#ff6b6b" fill="none" stroke-width="3">
+      <animate attributeName="d" 
+               dur="3s"
+               repeatCount="indefinite"
+               values="M-100,0 C-75,-30 -25,30 0,0 C25,-30 75,30 100,0;
+                      M-100,0 C-75,30 -25,-30 0,0 C25,30 75,-30 100,0;
+                      M-100,0 C-75,-30 -25,30 0,0 C25,-30 75,30 100,0"/>
+    </path>
+    <text x="0" y="50" fill="#ff6b6b" text-anchor="middle" font-size="16">Vibrating Strings</text>
+  </g>
+
+  <!-- Leech lattice representation -->
+  <g transform="translate(400,150)">
+    <!-- Grid points -->
+    <g fill="#88ccff">
+      <circle cx="-40" cy="-40" r="3"/>
+      <circle cx="-40" cy="0" r="3"/>
+      <circle cx="-40" cy="40" r="3"/>
+      <circle cx="0" cy="-40" r="3"/>
+      <circle cx="0" cy="0" r="3"/>
+      <circle cx="0" cy="40" r="3"/>
+      <circle cx="40" cy="-40" r="3"/>
+      <circle cx="40" cy="0" r="3"/>
+      <circle cx="40" cy="40" r="3"/>
+    </g>
+    <!-- Grid lines -->
+    <g stroke="#88ccff" stroke-width="1" opacity="0.5">
+      <line x1="-50" y1="-50" x2="50" y2="-50"/>
+      <line x1="-50" y1="0" x2="50" y2="0"/>
+      <line x1="-50" y1="50" x2="50" y2="50"/>
+      <line x1="-50" y1="-50" x2="-50" y2="50"/>
+      <line x1="0" y1="-50" x2="0" y2="50"/>
+      <line x1="50" y1="-50" x2="50" y2="50"/>
+    </g>
+    <text x="0" y="80" fill="#88ccff" text-anchor="middle" font-size="16">Leech Lattice</text>
+  </g>
+
+  <!-- Energy levels -->
+  <g transform="translate(600,150)">
+    <!-- Energy level lines -->
+    <g stroke="#50fa7b" stroke-width="2">
+      <line x1="-60" y1="-40" x2="60" y2="-40"/>
+      <line x1="-60" y1="-20" x2="60" y2="-20"/>
+      <line x1="-60" y1="0" x2="60" y2="0"/>
+      <line x1="-60" y1="20" x2="60" y2="20"/>
+      <line x1="-60" y1="40" x2="60" y2="40"/>
+    </g>
+    <text x="0" y="80" fill="#50fa7b" text-anchor="middle" font-size="16">Energy Levels</text>
+  </g>
+
+  <!-- Connecting arrows -->
+  <g stroke="#ffffff" stroke-width="2" opacity="0.6" marker-end="url(#arrowhead)">
+    <path d="M300,150 L360,150" fill="none"/>
+    <path d="M500,150 L560,150" fill="none"/>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff"/>
+    </marker>
+  </defs>
+</svg> 

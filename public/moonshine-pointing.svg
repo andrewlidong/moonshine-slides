@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#1a1a1a"/>
+    
+    <!-- Center Circle (Moonshine) -->
+    <g transform="translate(400, 200)">
+        <circle cx="0" cy="0" r="60" fill="#ffffff" opacity="0.1"/>
+        <text x="0" y="10" fill="#ffffff" font-size="20" text-anchor="middle">Monstrous</text>
+        <text x="0" y="35" fill="#ffffff" font-size="20" text-anchor="middle">Moonshine</text>
+    </g>
+
+    <!-- Monster Group Properties -->
+    <g transform="translate(150, 100)">
+        <circle cx="0" cy="0" r="40" fill="#ff4444" opacity="0.7"/>
+        <text x="0" y="50" fill="#ff4444" font-size="14" text-anchor="middle">Monster Group</text>
+        <text x="0" y="70" fill="#ff4444" font-size="14" text-anchor="middle">Elements</text>
+        <!-- Pointing arrow -->
+        <path d="M 40,0 L 200,150 M 180,130 L 200,150 L 170,160" 
+              stroke="#ff4444" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- j-function Properties -->
+    <g transform="translate(650, 100)">
+        <circle cx="0" cy="0" r="40" fill="#88ccff" opacity="0.7"/>
+        <text x="0" y="50" fill="#88ccff" font-size="14" text-anchor="middle">j-function</text>
+        <text x="0" y="70" fill="#88ccff" font-size="14" text-anchor="middle">Coefficients</text>
+        <!-- Pointing arrow -->
+        <path d="M -40,0 L -200,150 M -180,130 L -200,150 L -170,160" 
+              stroke="#88ccff" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- McKay-Thompson Series -->
+    <g transform="translate(150, 300)">
+        <circle cx="0" cy="0" r="40" fill="#88ff88" opacity="0.7"/>
+        <text x="0" y="50" fill="#88ff88" font-size="14" text-anchor="middle">McKay-Thompson</text>
+        <text x="0" y="70" fill="#88ff88" font-size="14" text-anchor="middle">Series</text>
+        <!-- Pointing arrow -->
+        <path d="M 40,0 L 200,-50 M 180,-70 L 200,-50 L 170,-40" 
+              stroke="#88ff88" stroke-width="2" fill="none"/>
+    </g>
+
+    <!-- Genus Zero Property -->
+    <g transform="translate(650, 300)">
+        <circle cx="0" cy="0" r="40" fill="#ffcc44" opacity="0.7"/>
+        <text x="0" y="50" fill="#ffcc44" font-size="14" text-anchor="middle">Genus Zero</text>
+        <text x="0" y="70" fill="#ffcc44" font-size="14" text-anchor="middle">Property</text>
+        <!-- Pointing arrow -->
+        <path d="M -40,0 L -200,-50 M -180,-70 L -200,-50 L -170,-40" 
+              stroke="#ffcc44" stroke-width="2" fill="none"/>
+    </g>
+</svg> 

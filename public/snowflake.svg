@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="120" viewBox="-60 -60 120 120" xmlns="http://www.w3.org/2000/svg">
+  <g style="stroke: #88ccff; stroke-width: 2; fill: none;">
+    <!-- Main arms -->
+    <path d="M 0 0 L 48 0 M 0 0 L 24 41.57 M 0 0 L -24 41.57 M 0 0 L -48 0 M 0 0 L -24 -41.57 M 0 0 L 24 -41.57"/>
+    <!-- Secondary branches -->
+    <path d="M 24 0 L 36 12 M 24 0 L 36 -12"/>
+    <path d="M 12 20.78 L 18 32.78 M 12 20.78 L 24 20.78"/>
+    <path d="M -12 20.78 L -18 32.78 M -12 20.78 L -24 20.78"/>
+    <path d="M -24 0 L -36 12 M -24 0 L -36 -12"/>
+    <path d="M -12 -20.78 L -18 -32.78 M -12 -20.78 L -24 -20.78"/>
+    <path d="M 12 -20.78 L 18 -32.78 M 12 -20.78 L 24 -20.78"/>
+  </g>
+</svg> 

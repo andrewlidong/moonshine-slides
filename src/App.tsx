@@ -1,345 +1,472 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import Reveal from 'reveal.js'
 import 'reveal.js/dist/reveal.css'
 import 'reveal.js/dist/theme/black.css'
-import 'katex/dist/katex.min.css'
-import { InlineMath, BlockMath } from 'react-katex'
-import { GroupActionVisualization } from './components/GroupActionVisualization'
-import { SymmetryVisualization } from './components/SymmetryVisualization'
-import { MonsterGroupVisualization } from './components/MonsterGroupVisualization'
-import { RubiksCubeVisualization } from './components/RubiksCubeVisualization'
-import { InteractiveGroupOperation } from './components/InteractiveGroupOperation'
 import './App.css'
 
-// Updated for deployment testing
 function App() {
-  const deckRef = useRef<HTMLDivElement>(null)
-
   useEffect(() => {
-    if (deckRef.current) {
-      const deck = new Reveal({
-        hash: true,
-        slideNumber: true,
-        controls: true,
-        progress: true,
-        center: true,
-        transition: 'slide',
-        width: '100%',
-        height: '100%',
-        margin: 0,
-        minScale: 0.2,
-        maxScale: 2.0,
-        plugins: []
-      })
-      deck.initialize()
-    }
+    const deck = new Reveal({
+      controls: true,
+      progress: true,
+      center: true,
+      hash: true,
+    })
+    deck.initialize()
   }, [])
 
   return (
-    <div className="reveal" ref={deckRef}>
+    <div className="reveal">
       <div className="slides">
         <section>
-          <h1>Group Theory, Abstraction, and the Monster</h1>
-          <p>An intuitive journey through symmetry, patterns, and mathematical beauty</p>
+          <h1>Monstrous Moonshine</h1>
+          <aside className="notes">
+          </aside>
         </section>
 
         <section>
-          <h2>What is a Group?</h2>
-          <div className="two-column">
-            <div>
-              <p>Think of a group as a collection of actions that:</p>
-              <ul>
-                <li>Can be combined (like doing one action after another)</li>
-                <li>Can be undone (every action has a reverse)</li>
-                <li>Have a "do nothing" option</li>
-                <li>Always give the same result regardless of order</li>
-              </ul>
+          <h2>What is it?</h2>
+          <div className="text-container">
+            <p>
+              Monstrous Moonshine is an unexpected link between two distant areas of math: 
+              the Monster group (a huge symmetry group) and a special modular function called 
+              the j-invariant.
+            </p>
+            <p>
+              These two objects come from completely different "worlds" 
+              of mathematics – yet they mysteriously correspond to each other.
+            </p>
+
+          </div>
+          <aside className="notes">
+          Monstrous Moonshine refers to a surprising mathematical mystery: somehow, a gigantic symmetry object (the Monster group) is intimately connected to a certain number-theoretic function (the j-invariant). Imagine discovering that a pattern in one field of math (group theory) perfectly predicts numbers in a different field (complex functions)!           
+          </aside>
+        </section>
+
+        <section>
+          <h2>Why "Moonshine"?</h2>
+          <div className="text-container">
+            <p>
+              The name "Monstrous Moonshine" combines the Monster (for the group) with "moonshine," because John Conway thought it was crazy that these two objects could be related.  
+            </p>
+            <p>
+              Yes, this is Conway's Game of Life John Conway.  
+            </p>
+          </div>
+          <aside className="notes">
+          This idea sounded so far-fetched that John Conway joked it was mere "moonshine," i.e. pure craziness​. But it turned out to be real – a true mathematical "aha!" moment linking two puzzles from different realms into one. In this talk, we'll explore what the Monster group is, what the j-invariant is, how this wild connection was discovered, and why it matters.          
+          </aside>
+        </section>
+
+        <section>
+          <h2> Groups</h2>
+          <div className="text-container">
+            <p>
+              A symmetry group is the set of all transformations that leave an object looking the same.
+              Think of rotating a snowflake 60° – it looks identical after the rotation.
+            </p>
+            <div className="snowflake-container">
+              <img src="/snowflake.svg" alt="Rotating snowflake showing 6-fold symmetry" className="snowflake-demo" />
+              <p className="caption">A snowflake has 6-fold rotational symmetry, and is part of the symmetry group D6</p>
             </div>
-            <div>
-              <p className="highlight">Real-world examples:</p>
-              <ul>
-                <li>Rotating a square (90° turns)</li>
-                <li>Shuffling a deck of cards</li>
-                <li>Moving pieces on a Rubik's cube</li>
-                <li>Symmetries of a snowflake</li>
-              </ul>
+          </div>
+          <aside className="notes">
+          Every symmetrical object has an associated group of symmetries – the set of all ways you can move it or flip it such that it still looks the same. For example, a six-pointed snowflake has a symmetry group including rotations and reflections (turn it 60° or mirror it, and it remains unchanged). 
+
+          A snowflake has 6-fold symmetry; you can rotate it or reflect it and it stays the same. The dashed lines in this image show axes of symmetry. All such symmetry operations, combined, form the snowflake's symmetry group. In mathematics, we extend this idea to very abstract objects.           
+        </aside>
+        </section>
+
+        <section>
+          <h2>More Groups</h2>
+          <div className="text-container">
+            <p>
+              A group is the same if there is an isomorphism between them.  (Think cube rotations vs permutation group of 4 elements)
+            </p>
+            <p>
+              Finite groups break down into simple groups (Jordan-Holder Theorem)
+            </p>
+            <p>
+              In 2004, Aschbacher and Smith proved the Classification of Quasithin Groups, proving that all the simple groups are known.
+            </p>
+            <p>
+              In particular, there are 18 infinite families of simple groups (C groups, A Groups, Lie), but then 26 other sporadic groups
+            </p>
+            <div className="concept-image">
+              <img src="/group-isomorphism.svg" alt="Visualization of group isomorphism between cube rotations and permutations" />
+            </div>
+
+          </div>
+          <aside className="notes">
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Monster Group</h2>
+          <div className="text-container">
+            <p>
+              The Monster is the largest sporadic simple symmetry group known – with about 8×10⁵³ elements.
+              That's a lot.  
+            </p>
+            <p>
+              The second largest sporadic simple group is the baby monster, and there are 18 other sporadic groups that are "children" of the monster, called the happy family.  There's also 6 pariah groups.  
+            </p>
+            <div className="monster-family-container">
+              <img src="/monster-family.svg" alt="Monster group family tree showing the Monster, Baby Monster, Happy Family, and Pariah groups" className="monster-family" />
+            </div>
+
+          </div>
+          <aside className="notes">
+          The Monster group is a kind of "holy grail" of symmetry groups – the largest exceptional symmetric structure. It was discovered as part of the classification of finite simple groups (often described as a catalog of the "building blocks" of symmetry). The Monster has a whopping ~8×10^53 elements​ – that number is astronomically large (bigger than the number of atoms in a thousand planets!). If a Rubik's cube's moves form a group, imagine a Rubik's cube on steroids in 196,883 dimensions – that gives an intuition of the Monster. In fact, the Monster can be thought of as the symmetry group of a highly complex geometric object that effectively lives in 196,883-dimensional space​ . No physical object exists there, of course, but mathematically it's a perfectly consistent (if extremely complicated) symmetry. The Monster group is so exceptional that mathematicians were in awe of its existence – it's like encountering a giant mythical creature in the landscape of mathematics.
+          </aside>
+        </section>
+
+
+        <section>
+          <h2>196,883 dimensions</h2>
+          <div className="text-container">
+            <p>
+              This group is so complex that it cannot be visualized in ordinary space.
+              The Monster's symmetries effectively act in 196,883 dimensions
+            </p>
+            
+            <p>
+              Think of it as a kaleidoscope pattern – but in almost two hundred thousand dimensions.
+            </p>
+            <div className="dimensions-container">
+              <img src="/dimensions.svg" alt="Visualization showing progression from 1D to 196,883 dimensions" className="dimensions-viz" />
+            </div>
+          </div>
+          <aside className="notes">
+            We can visualize a cube's symmetries in 3D space, but the Monster requires
+            196,883 dimensions to be properly represented. This is not just big - it's
+            in a realm beyond human visualization. The kaleidoscope analogy helps us
+            grasp the concept, even though the reality is far more complex.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Modular Functions and the j-Invariant</h2>
+          <div className="text-container">
+            <p>
+              Modular functions are special functions in number theory that have repeating symmetry patterns 
+              on the complex plane (imagine a pattern like an M.C. Escher tessellation that repeats in a structured way).
+            </p>
+            <p>
+              Different torus shapes correspond to different values of the j-function. For example, 
+              a square torus has j = 1728, while a hexagonal torus has j = 0.
+            </p>
+
+            <div className="modular-container">
+              <img src="/taoros.png" alt="Visualization of torus shapes" className="modular-viz taoros-image" />
+            </div>
+            {/* <div className="modular-container">
+              <img src="/modular-pattern.svg" alt="Visualization of modular patterns" className="modular-viz" />
+            </div> */}
+          </div>
+          <aside className="notes">
+            Modular functions are like mathematical kaleidoscopes - they create beautiful, repeating patterns
+            in the complex plane. These patterns aren't just pretty - they encode deep mathematical properties
+            and have profound connections to other areas of mathematics.
+          </aside>
+        </section>
+
+        <section>
+          <h2>"Fingerprints" of Shapes</h2>
+          <div className="text-container">
+            <p>
+              The j-invariant (or j-function) is a famous example of a modular function. It essentially assigns 
+              a unique number to every distinct torus shape (an elliptic curve, which topologically is like a donut).
+            </p>
+            <p>
+              In other words, it's like a "fingerprint" for the shape of a torus – if two tori have different 
+              geometry, the j-invariant will distinguish them.
+            </p>
+            <p>
+              A key property of the j-invariant is its Fourier series expansion:
+            </p>
+            <div className="math-container">
+              j(q) = 1/q + 744 + 196884q + 21,493,760q² + 864,299,970q³ + ...
+            </div>
+            <p className="caption">
+              (Here q=e^(2πiτ); the series produces a sequence of big coefficients: 744, 196,884, 21,493,760, ...)
+            </p>
+          </div>
+          <aside className="notes">
+            Think of each possible donut (torus) shape getting its own ID number. The j-function is like an ID 
+            machine – its output acts as a unique tag or fingerprint for each shape of a donut in the mathematical 
+            universe. The coefficients in its expansion will turn out to have a deep connection to the Monster group.  
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Donut ID Machine</h2>
+          <div className="text-container">
+            <p>
+              Imagine you have a magical machine that can identify any donut shape in the universe by giving it a unique ID number.
+              That's what the j-function does for mathematical donuts.
+            </p>
+            <div className="video-container">
+              <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/YkXr1ET8jWo" 
+                title="Understanding Torus Shapes" 
+                frameBorder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowFullScreen>
+              </iframe>
             </div>
           </div>
         </section>
 
         <section>
-          <h2>The Language of Groups</h2>
-          <div className="two-column">
-            <div>
-              <p>Mathematically, a group <InlineMath math="(G, \cdot)"/> is a set with:</p>
-              <ul>
-                <li>Closure: <InlineMath math="\forall a,b \in G, a\cdot b \in G"/></li>
-                <li>Associativity: <InlineMath math="(a\cdot b)\cdot c = a\cdot (b\cdot c)"/></li>
-                <li>Identity: <InlineMath math="\exists e \in G, e\cdot a = a\cdot e = a"/></li>
-                <li>Inverses: <InlineMath math="\forall a \in G, \exists a^{-1} \in G"/></li>
-              </ul>
-            </div>
-            <div>
-              <p className="highlight">In plain English:</p>
-              <ul>
-                <li>Any two actions combined make another valid action</li>
-                <li>Order of combining three actions doesn't matter</li>
-                <li>There's always a "do nothing" action</li>
-                <li>Every action can be undone</li>
-              </ul>
+          <h2>Special Donut Shapes</h2>
+          <div className="text-container">
+            <p>
+              Each donut shape gets its own unique j-value, but some special shapes have particularly nice numbers:
+            </p>
+            <div className="donut-grid">
+              <div className="donut-item">
+                <img src="/square-donut.jpg" alt="Square donut shape" className="donut-viz" />
+                <p className="caption">Square donut → j = 1728</p>
+              </div>
+              <div className="donut-item">
+                <img src="/hexagonal-donut.jpg" alt="Hexagonal donut shape" className="donut-viz" />
+                <p className="caption">Hexagonal donut → j = 0</p>
+              </div>
             </div>
           </div>
         </section>
 
         <section>
-          <h2>Group Properties</h2>
-          <ul>
-            <li>Order: <InlineMath math="|G|"/> = number of elements</li>
-            <li>Subgroup: <InlineMath math="H \subseteq G"/> is a subgroup if <InlineMath math="(H, \cdot)"/> is a group</li>
-            <li>Coset: <InlineMath math="gH = \{gh \mid h \in H\}"/></li>
-            <li>Normal subgroup: <InlineMath math="\forall g \in G, gH = Hg"/></li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Group Actions</h2>
-          <div className="two-column">
-            <div>
-              <p>A group <InlineMath math="G"/> acts on a set <InlineMath math="X"/> if:</p>
-              <ul>
-                <li><InlineMath math="\forall x \in X, e \cdot x = x"/></li>
-                <li><InlineMath math="\forall g_1, g_2 \in G, x \in X, (g_1 \cdot g_2) \cdot x = g_1 \cdot (g_2 \cdot x)"/></li>
-                <li>Orbit: <InlineMath math="G \cdot x = \{g \cdot x \mid g \in G\}"/></li>
-                <li>Stabilizer: <InlineMath math="G_x = \{g \in G \mid g \cdot x = x\}"/></li>
-              </ul>
+          <h2>The Initial Discovery</h2>
+          <div className="text-container">
+            <p>
+              In 1978, mathematician John McKay noticed something astonishing in the j-function's expansion:
+            </p>
+            <div className="math-container highlight">
+              196,884 = 196,883 + 1
             </div>
-            <div>
-              <GroupActionVisualization size={300} />
+            <p>
+              This coincidence linked a number from the j-function to a fundamental property 
+              of the Monster group – two objects from completely different mathematical worlds
+            </p>
+
+            <div className="coincidence-container">
+              <div className="coincidence-item">
+                <p className="highlight">196,884</p>
+                <p className="caption">First big coefficient in j-function</p>
+              </div>
+              <div className="coincidence-item">
+                <p className="highlight">196,883</p>
+                <p className="caption">Dimension of Monster's smallest representation</p>
+              </div>
+            </div>
+
+            <div className="concept-image">
+              <img src="/two-spiderman.jpg" alt="Two mathematical worlds pointing at each other" className="meme-image" />
             </div>
           </div>
         </section>
 
         <section>
-          <h2>The Monster Group M</h2>
-          <div className="two-column">
-            <div>
-              <ul>
-                <li>Order: <InlineMath math="|M| = 2^{46} \cdot 3^{20} \cdot 5^9 \cdot 7^6 \cdot 11^2 \cdot 13^3 \cdot 17 \cdot 19 \cdot 23 \cdot 29 \cdot 31 \cdot 41 \cdot 47 \cdot 59 \cdot 71"/></li>
-                <li>Smallest faithful representation: 196,883 dimensions</li>
-                <li>Character table: 194 × 194 matrix</li>
-                <li>One of 26 sporadic simple groups</li>
-              </ul>
+          <h2>The Moonshine Conjecture</h2>
+          <div className="text-container">
+            <div className="timeline">
+              <div className="timeline-item">
+                <p className="date">1978</p>
+                <p>McKay notices the 196,884 connection</p>
+              </div>
+              <div className="timeline-item">
+                <p className="date">1979</p>
+                <p>Conway and Norton publish "Monstrous Moonshine"</p>
+              </div>
             </div>
-            <div>
-              <MonsterGroupVisualization size={300} color="#2c3e50" />
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Visualizing the Monster</h2>
-          <div className="monster-visualization">
-            <MonsterGroupVisualization size={500} color="#2c3e50" />
-          </div>
-          <div className="two-column">
-            <div>
-              <h3>Key Features</h3>
-              <ul>
-                <li>196,883-dimensional space</li>
-                <li>Complex internal structure</li>
-                <li>Multiple symmetry axes</li>
-                <li>Nested subgroup patterns</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Mathematical Properties</h3>
-              <ul>
-                <li>Symmetry and automorphisms</li>
-                <li>Maximal subgroups</li>
-                <li>Character table structure</li>
-                <li>Representation theory</li>
-              </ul>
+            <p>
+              Conway and Norton's 1979 paper "Monstrous Moonshine" boldly conjectured that this was no 
+              coincidence – there must be a real mathematical connection. They listed many instances where 
+              Monster group elements and the j-function's values line up in a genus-zero modular function 
+              called "McKay–Thompson series."
+            </p>
+            <div className="concept-image">
+              <img src="/multiple-spidermen.jpg" alt="Multiple mathematical concepts pointing at each other" className="meme-image" />
             </div>
           </div>
         </section>
 
         <section>
-          <h2>The Discovery Story</h2>
-          <div className="two-column">
-            <div>
-              <p className="highlight">The Mathematical Detective Story:</p>
-              <ul>
-                <li>1973: Fischer and Griess find hints of a massive group</li>
-                <li>1979: Conway and Norton name it "The Monster"</li>
-                <li>1980: Griess constructs it in 196,883 dimensions</li>
-                <li>1998: Borcherds proves its connection to string theory</li>
-              </ul>
+          <h2>Strings?</h2>
+          <div className="text-container">
+          <p>
+              For over a decade, the Moonshine Conjecture remained one of mathematics' unsolved mysteries. 
+            </p>
+
+            <p>
+              Proving Monstrous Moonshine was a colossal challenge that required inventing new mathematics.
+              The key insight came from an unexpected direction: string theory.
+            </p>
+            <p>
+              String theory suggests that fundamental particles are actually tiny vibrating strings.
+              But how does this connect to the Monster group and the j-function?
+            </p>
+            <div className="concept-image">
+              <img src="/string-theory.jpg" alt="String theory connection to Monster group" className="meme-image" />
             </div>
-            <div>
-              <p className="highlight">Why It's Special:</p>
-              <ul>
-                <li>Largest sporadic simple group</li>
-                <li>More symmetries than atoms in the universe</li>
-                <li>Connects number theory and physics</li>
-                <li>Appears in string theory and quantum mechanics</li>
-              </ul>
-            </div>
+            <aside className="notes">
+            Proving Monstrous Moonshine was a colossal challenge – it wasn't enough to notice the patterns; 
+            one had to explain them with a rigorous theory. Borcherds achieved this by basically inventing 
+            the necessary mathematics. He connected the problem to string theory, where the symmetries of a 
+            particular model (involving the Leech lattice) form the Monster group, and the allowed energy 
+            levels of string vibrations are encoded by modular functions like the j-invariant. This was the 
+            missing "why" behind the scenes.
+          </aside>
+
           </div>
         </section>
 
         <section>
-          <h2>Understanding the Monster</h2>
-          <div className="two-column">
-            <div>
-              <p className="highlight">Think of it like this:</p>
-              <ul>
-                <li>A Rubik's cube has 43,252,003,274,489,856,000 positions</li>
-                <li>The Monster has ~8×10⁵³ elements</li>
-                <li>That's more than the number of atoms in the universe!</li>
-                <li>Yet it's still a simple group</li>
-              </ul>
+          <h2>The Leech Lattice Connection</h2>
+          <div className="text-container">
+            <p>
+              In 1992, Richard Borcherds discovered that a particular string theory model using the Leech lattice 
+              (a special 24-dimensional pattern) held the key.  
+            </p>
+            <p>
+              The Leech lattice is a remarkable 24-dimensional crystal-like pattern that:
+            </p>
+            <ul>
+              <li>Has the densest known sphere packing in 24 dimensions</li>
+              <li>Contains the symmetries needed to build the Monster group</li>
+              <li>Provides the perfect space for the string vibrations that generate the j-function</li>
+            </ul>
+          </div>
+
+            <div className="concept-image">
+              <img src="/leech-lattice.png" alt="Visualization of the Leech lattice pattern" className="meme-image" />
             </div>
-            <div>
-              <RubiksCubeVisualization size={300} color="#2c3e50" />
+          <aside className="notes">
+            Then in 1992, Richard Borcherds achieved a breakthrough by connecting the problem to string 
+            theory – a theory where fundamental particles are tiny vibrating strings. The Leech lattice, 
+            with its perfect symmetries in 24 dimensions, provided the exact structure needed to bridge 
+            the Monster group and the j-function through string theory.
+          </aside>
+        </section>
+
+        <section>
+          <h2>The Moonshine Module</h2>
+          <div className="text-container">
+            <p>
+              To make this rigorous, Borcherds constructed a Vertex Operator Algebra (VOA) 
+              – nicknamed the "Moonshine Module" – that precisely describes how these strings vibrate.
+            </p>
+            <div className="math-container">
+              In this VOA (Moonshine Module):
             </div>
+            <ul>
+              <li>The Monster group appears naturally as the symmetry group of the VOA</li>
+              <li>j-function coefficients appear as the graded dimensions (essentially, counts of certain states), aligning with the different ways strings can vibrate</li>
+              <li>The "no-ghost theorem" (which ensures the consistency of certain infinite-dimensional spaces) proves it's all mathematically sound</li>
+            </ul>
           </div>
         </section>
 
         <section>
-          <h2>Monstrous Moonshine</h2>
-          <div className="two-column">
-            <div>
-              <p className="highlight">The Unexpected Connection:</p>
-              <ul>
-                <li>196,884 = 196,883 + 1</li>
-                <li>Links modular functions to group theory</li>
-                <li>Connects number theory to physics</li>
-                <li>Led to new understanding of string theory</li>
-              </ul>
+          <h2>A Mathematical Triumph</h2>
+          <div className="text-container">
+            <p>
+              Borcherds was "over the moon" when he solved it, and the mathematics community celebrated 
+              this breakthrough that bridged pure mathematics and theoretical physics.
+            </p>
+            <div className="timeline">
+              <div className="timeline-item">
+                <p className="date">1992</p>
+                <p>Proof published</p>
+              </div>
+              <div className="timeline-item">
+                <p className="date">1998</p>
+                <p>Fields Medal awarded</p>
+              </div>
             </div>
-            <div>
-              <p className="highlight">Why It Matters:</p>
-              <ul>
-                <li>Shows deep connections in mathematics</li>
-                <li>Helps understand quantum gravity</li>
-                <li>Inspires new mathematical concepts</li>
-                <li>Unifies different areas of physics</li>
-              </ul>
-            </div>
+            <p>
+              The proof showed that what seemed like numerical coincidences were actually 
+              glimpses of a deep connection between symmetry, string theory, and number theory.
+            </p>
+            <p>
+            The tools developed by Borcherds (vertex operator algebras, etc.) are now used extensively in algebra and geometry
+            </p>
+
+          </div>
+          <aside className="notes">
+            Borcherds' proof was revolutionary because it not only solved the conjecture but also 
+            revealed why the connection exists. The VOA framework showed that the Monster group and 
+            j-function were naturally connected through string theory, transforming a mysterious 
+            coincidence into a profound mathematical truth.
+          </aside>
+        </section>
+
+        <section>
+          <h2>Connections to Physics</h2>
+          <div className="text-container">
+            <p>
+              The Monster's appearance in string theory hints at deeper physical meaning:
+            </p>
+            <ul>
+              <li>The Moonshine Module is a model of 2D conformal field theory - a structure also used to describe strings</li>
+              <li>Possible connections to black hole physics and quantum gravity.</li>
+              <li>Later developments (umbral moonshine) suggest links to counting black hole states</li>
+              <li>There are 194 natural conjugacy classes of the monster and 194 types of black holes in some theoretical models.  Is this a coincidence?</li>
+
+            </ul>
+            <p>
+              Could this once "crazy" mathematical idea tell us something fundamental about the universe?
+            </p>
           </div>
         </section>
 
         <section>
-          <h2>Real-World Applications</h2>
-          <div className="two-column">
-            <div>
-              <p className="highlight">Physics:</p>
-              <ul>
-                <li>Particle symmetries</li>
-                <li>String theory compactification</li>
-                <li>Quantum mechanics</li>
-                <li>Gauge theories</li>
-              </ul>
-            </div>
-            <div>
-              <p className="highlight">Technology:</p>
-              <ul>
-                <li>Error-correcting codes</li>
-                <li>Cryptography</li>
-                <li>Computer graphics</li>
-                <li>Molecular modeling</li>
-              </ul>
-            </div>
+          <h2>More Moonshine</h2>
+          <div className="text-container">
+            <p>
+              Monstrous Moonshine was just the beginning. New "moonshines" keep emerging:
+            </p>
+            <ul>
+              <li>
+                <span className="highlight">Mathieu Moonshine:</span> Connects group M₂₄ to K3 surfaces
+              </li>
+              <li>
+                <span className="highlight">Umbral Moonshine:</span> A family of moonshines linking 
+                sporadic groups to mock modular forms
+              </li>
+            </ul>
+            <p>
+            The term “moonshine” itself, once used jokingly, has become a proud badge for an entire research area. 
+            </p>
           </div>
         </section>
 
         <section>
-          <h2>The Beauty of Mathematics</h2>
-          <p>The Monster Group teaches us that:</p>
-          <ul>
-            <li>Simple rules can create complex patterns</li>
-            <li>Mathematics reveals hidden connections</li>
-            <li>Beauty lies in unexpected relationships</li>
-            <li>Understanding comes through multiple perspectives</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Group Classification</h2>
-          <p>Finite simple groups fall into:</p>
-          <ul>
-            <li>Cyclic groups of prime order</li>
-            <li>Alternating groups <InlineMath math="A_n"/> (<InlineMath math="n \geq 5"/>)</li>
-            <li>Groups of Lie type</li>
-            <li>26 sporadic groups</li>
-          </ul>
-          <p>Classification Theorem (2004): Complete list of finite simple groups</p>
-        </section>
-
-        <section>
-          <h2>Applications in Physics</h2>
-          <ul>
-            <li>Particle symmetries: <InlineMath math="SU(3) \times SU(2) \times U(1)"/></li>
-            <li>String theory: <InlineMath math="E_8 \times E_8"/> heterotic string</li>
-            <li>Quantum mechanics: Symmetry operators</li>
-            <li>Gauge theories: Local symmetries</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Modern Applications</h2>
-          <ul>
-            <li>Cryptography: Discrete logarithm problem</li>
-            <li>Error-correcting codes: Group codes</li>
-            <li>Molecular symmetry: Point groups</li>
-            <li>Computer graphics: Rotation groups</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Historical Development</h2>
-          <div className="two-column">
-            <div>
-              <p className="highlight">Key Milestones:</p>
-              <ul>
-                <li>1832: Galois introduces group theory</li>
-                <li>1872: Klein's Erlangen Program</li>
-                <li>1895: Lie's continuous groups</li>
-                <li>1963: Feit-Thompson Theorem</li>
-                <li>2004: Classification of finite simple groups</li>
-              </ul>
-            </div>
-            <div>
-              <InteractiveGroupOperation size={300} color="#2c3e50" />
-            </div>
+          <h2>Open Questions</h2>
+          <div className="text-container">
+            <p>
+              Many mysteries remain:
+            </p>
+            <ul>
+              <li>Why does the Monster exist in such a perfectly packaged way?</li>
+              <li>Is there a unified theory connecting all moonshines?</li>
+              <li>Could the Monster's 194 conjugacy classes correspond to different types of black holes?</li>
+              <li>What other mathematical "monsters" and "moonshine" await discovery?</li>
+            </ul>
           </div>
+          <aside className="notes">
+            Monstrous Moonshine has become a catalyst for cross-disciplinary research, 
+            bridging pure mathematics and theoretical physics. It suggests that Nature might 
+            employ the same mathematics we once thought was just abstract play. The story 
+            continues to unfold, inviting new generations to explore these deep connections 
+            and piece together the ultimate puzzle.
+          </aside>
         </section>
 
-        <section>
-          <h2>Interactive Group Operations</h2>
-          <div className="two-column">
-            <div>
-              <ul>
-                <li>Click elements to select them</li>
-                <li>Choose between multiply and inverse operations</li>
-                <li>Observe how group operations work</li>
-                <li>Notice the closure property in action</li>
-              </ul>
-              <SymmetryVisualization size={300} />
-            </div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Conclusion</h2>
-          <p>The Monster Group shows us that:</p>
-          <ul>
-            <li>Mathematics is full of surprises</li>
-            <li>Deep connections exist between different fields</li>
-            <li>Beauty and complexity can coexist</li>
-            <li>Understanding comes through multiple perspectives</li>
-          </ul>
-        </section>
       </div>
     </div>
   )

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="300" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="300" fill="#1a1a1a"/>
+    
+    <!-- Left Puzzle (Monster Group) -->
+    <g transform="translate(100, 50)">
+        <!-- Puzzle outline -->
+        <path d="M 0,0 
+                 C 100,0 150,0 250,0 
+                 C 250,50 250,100 250,150
+                 C 150,150 100,150 0,150
+                 C 0,100 0,50 0,0" 
+              fill="none" stroke="#ff4444" stroke-width="3"/>
+        
+        <!-- Inner pieces suggestion -->
+        <path d="M 125,0 L 125,150 M 0,75 L 250,75" 
+              stroke="#ff4444" stroke-width="2" opacity="0.5"/>
+        
+        <!-- Label -->
+        <text x="125" y="180" fill="#ff4444" font-size="20" text-anchor="middle">Monster Group</text>
+        <text x="125" y="205" fill="#ffffff" font-size="16" text-anchor="middle">Finite Symmetry</text>
+    </g>
+
+    <!-- Right Puzzle (j-function) -->
+    <g transform="translate(450, 50)">
+        <!-- Puzzle outline -->
+        <path d="M 0,0 
+                 C 100,0 150,0 250,0 
+                 C 250,50 250,100 250,150
+                 C 150,150 100,150 0,150
+                 C 0,100 0,50 0,0" 
+              fill="none" stroke="#88ccff" stroke-width="3"/>
+        
+        <!-- Inner pieces suggestion -->
+        <path d="M 125,0 L 125,150 M 0,75 L 250,75" 
+              stroke="#88ccff" stroke-width="2" opacity="0.5"/>
+        
+        <!-- Label -->
+        <text x="125" y="180" fill="#88ccff" font-size="20" text-anchor="middle">j-function</text>
+        <text x="125" y="205" fill="#ffffff" font-size="16" text-anchor="middle">Modular Functions</text>
+    </g>
+
+    <!-- Connecting Piece -->
+    <g transform="translate(350, 75)">
+        <!-- Interlocking piece -->
+        <path d="M 0,0 L 100,0 L 100,50 L 0,50 Z" 
+              fill="none" stroke="#88ccff" stroke-width="2"/>
+        <text x="50" y="30" fill="#ffffff" font-size="14" text-anchor="middle">196,884</text>
+        <text x="50" y="80" fill="#ffffff" font-size="12" text-anchor="middle">Mysterious Connection</text>
+    </g>
+</svg> 

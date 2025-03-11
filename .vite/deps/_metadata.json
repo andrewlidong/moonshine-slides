@@ -1,0 +1,40 @@
+{
+  "hash": "42a889b9",
+  "configHash": "6be9bdf6",
+  "lockfileHash": "58dd9d72",
+  "browserHash": "aa6be015",
+  "optimized": {
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "4c221a3d",
+      "needsInterop": true
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "6b2882d7",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "0b38d606",
+      "needsInterop": true
+    },
+    "reveal.js": {
+      "src": "../../node_modules/reveal.js/dist/reveal.esm.js",
+      "file": "reveal__js.js",
+      "fileHash": "39bf2923",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-A5WMBDNA": {
+      "file": "chunk-A5WMBDNA.js"
+    },
+    "chunk-JVWSFFO4": {
+      "file": "chunk-JVWSFFO4.js"
+    }
+  }
+}

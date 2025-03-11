@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="400" fill="#1a1a1a"/>
+    
+    <!-- Left side: Monster Group representation -->
+    <g transform="translate(100, 50)">
+        <circle cx="150" cy="150" r="100" fill="none" stroke="#ff4444" stroke-width="2"/>
+        <path d="M 150,50 L 150,250 M 50,150 L 250,150" stroke="#ff4444" stroke-width="2" opacity="0.7"/>
+        <circle cx="150" cy="150" r="70" fill="none" stroke="#ff4444" stroke-width="2" opacity="0.5"/>
+        <text x="150" y="280" fill="#ff4444" font-size="20" text-anchor="middle">Monster Group</text>
+    </g>
+    
+    <!-- Right side: j-function representation -->
+    <g transform="translate(450, 50)">
+        <path d="M 150,50 Q 250,150 150,250 Q 50,150 150,50" fill="none" stroke="#88ccff" stroke-width="2"/>
+        <path d="M 100,100 Q 150,150 100,200" fill="none" stroke="#88ccff" stroke-width="2" opacity="0.7"/>
+        <path d="M 200,100 Q 150,150 200,200" fill="none" stroke="#88ccff" stroke-width="2" opacity="0.7"/>
+        <text x="150" y="280" fill="#88ccff" font-size="20" text-anchor="middle">j-function</text>
+    </g>
+    
+    <!-- Connection between them -->
+    <g transform="translate(0, 0)">
+        <path d="M 400,200 L 450,200" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5"/>
+        <text x="400" y="180" fill="#ffffff" font-size="24" text-anchor="middle">?</text>
+    </g>
+</svg> 

@@ -1,90 +1,54 @@
-# Monstrous Moonshine Presentation
+# React + TypeScript + Vite
 
-An interactive presentation exploring the fascinating connection between the Monster Group and modular functions, known as Monstrous Moonshine.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Overview
+Currently, two official plugins are available:
 
-This presentation delves into one of the most surprising connections in mathematics, where the largest sporadic simple group (the Monster Group) appears to be intimately connected with modular functions and string theory. The presentation covers:
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- Essential group theory background
-- The Monster Group and its properties
-- The discovery of Monstrous Moonshine
-- Modular functions and the j-invariant
-- String theory connections
-- Modern developments in the field
+## Expanding the ESLint configuration
 
-## Features
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-- Interactive visualizations of group symmetries
-- Mathematical formulas rendered with KaTeX
-- Responsive design for all screen sizes
-- Keyboard navigation for easy presentation control
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v16 or higher)
-- npm (v7 or higher)
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/moonshine-slides.git
-cd moonshine-slides
+```js
+export default tseslint.config({
+  extends: [
+    // Remove ...tseslint.configs.recommended and replace with this
+    ...tseslint.configs.recommendedTypeChecked,
+    // Alternatively, use this for stricter rules
+    ...tseslint.configs.strictTypeChecked,
+    // Optionally, add this for stylistic rules
+    ...tseslint.configs.stylisticTypeChecked,
+  ],
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
-2. Install dependencies:
-```bash
-npm install
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default tseslint.config({
+  plugins: {
+    // Add the react-x and react-dom plugins
+    'react-x': reactX,
+    'react-dom': reactDom,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended typescript rules
+    ...reactX.configs['recommended-typescript'].rules,
+    ...reactDom.configs.recommended.rules,
+  },
+})
 ```
-
-### Development
-
-To run the presentation locally:
-
-```bash
-npm run dev
-```
-
-Then open your browser and navigate to:
-```
-http://localhost:5173/moonshine-slides/
-```
-
-### Production Build
-
-To create a production build:
-
-```bash
-npm run build
-```
-
-To preview the production build:
-
-```bash
-npm run preview
-```
-
-## Navigation Controls
-
-- **Arrow Keys** (← →): Move between slides
-- **Space Bar**: Advance to next slide
-- **ESC**: Show overview of all slides
-
-## Technologies Used
-
-- React
-- TypeScript
-- Vite
-- KaTeX for mathematical typesetting
-- CSS Modules for styling
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
