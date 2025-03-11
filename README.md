@@ -1,99 +1,74 @@
-# Monstrous Moonshine Presentation
+# Moonshine Slides
 
-An interactive presentation about the fascinating connection between the Monster Group and the j-function in mathematics. This presentation explores the history, discovery, and implications of Monstrous Moonshine.
+A modern, interactive presentation about Monstrous Moonshine and its mathematical significance. Built with Vite, React, and reveal.js.
 
-**[View Live Presentation](https://andrewlidong.xyz/moonshine-slides/)**
+## Features
 
-## Overview
+- Responsive design for all devices
+- Touch-enabled navigation for mobile
+- Beautiful mathematical visualizations
+- Interactive timeline of discoveries
+- Clean, modern UI with subtle animations
 
-This presentation covers:
-- The Monster Group and its properties
-- Modular Functions and the j-invariant
-- The discovery of Monstrous Moonshine
-- Borcherds' proof using string theory
-- Modern implications and open questions
+## Setup
 
-## Local Development
+1. Clone the repository:
+```bash
+git clone https://github.com/andrewlidong/moonshine-slides.git
+cd moonshine-slides
+```
 
-1. Install dependencies:
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-2. Start the development server:
+3. Start development server:
 ```bash
 npm run dev
 ```
 
-3. Open http://localhost:5174/moonshine-slides/ in your browser
-
-## Building for Production
-
-1. Update the base URL in `vite.config.ts` (already set to `/moonshine-slides/`)
-
-2. Build the project:
+4. Build for production:
 ```bash
 npm run build
 ```
 
-This will create a `dist` directory with the production build.
-
-## Deployment to GitHub Pages
-
-1. Build the project as described above
-
-2. Create (or update) `.github/workflows/deploy.yml` with the following content:
-```yaml
-name: Deploy to GitHub Pages
-
-on:
-  push:
-    branches: [ main ]
-  workflow_dispatch:
-
-jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '20'
-          
-      - name: Install Dependencies
-        run: npm install
-        
-      - name: Build
-        run: npm run build
-        
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@4.1.5
-        with:
-          branch: gh-pages
-          folder: dist
+5. Preview production build:
+```bash
+cd public
+python3 -m http.server 8000
 ```
 
-3. Push your changes to the main branch. The GitHub Action will automatically:
-   - Build your project
-   - Deploy to the gh-pages branch
-   - Make it available at https://andrewlidong.xyz/moonshine-slides/
+Then visit `http://localhost:8000` in your browser.
 
-## Controls
+## Navigation
 
-- Arrow keys or Space: Navigate through slides
-- F: Toggle fullscreen
-- S: Show speaker notes
-- ?: Show all keyboard shortcuts
+- Desktop: Use arrow keys or navigation buttons
+- Mobile: Swipe left/right or use on-screen controls
+- Press 'Esc' to see an overview of all slides
 
-## Credits
+## Structure
 
-This presentation uses:
-- [Reveal.js](https://revealjs.com/) for the presentation framework
-- [Vite](https://vitejs.dev/) for build tooling
-- [React](https://reactjs.org/) for UI components
+- Introduction to Monstrous Moonshine
+- The Monster Group
+- Modular Functions
+- McKay's Observation
+- Mathematical Connections
+- Timeline of Discoveries
+- Modern Implications
+
+## Technologies
+
+- Vite
+- React
+- reveal.js
+- TypeScript
+- CSS3 with modern features
+
+## Contributing
+
+Feel free to open issues or submit pull requests for improvements.
 
 ## License
 
-MIT License
+MIT License - See LICENSE file for details
