@@ -445,9 +445,6 @@ function App() {
         <section>
           <h2>Open Questions</h2>
           <div className="text-container">
-            <p>
-              Many mysteries remain:
-            </p>
             <ul>
               <li>Why does the Monster exist in such a perfectly packaged way?</li>
               <li>Is there a unified theory connecting all moonshines?</li>

@@ -26,20 +26,20 @@
 }
 
 .reveal section {
-  padding: 24px !important;
-  height: 100vh !important;
-  width: 100% !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  box-sizing: border-box !important;
-  overflow-y: auto !important;
-  gap: 12px !important;
-  max-width: 1200px !important;
-  margin: 0 auto !important;
-  scrollbar-width: thin !important;
-  scrollbar-color: rgba(136, 204, 255, 0.5) rgba(255, 255, 255, 0.1) !important;
+  padding: 24px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  overflow-y: auto;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(136, 204, 255, 0.5) rgba(255, 255, 255, 0.1);
 }
 
 /* Navigation arrows */
@@ -68,50 +68,50 @@
 
 /* Typography */
 .reveal h1 {
-  font-size: clamp(24px, 3.5vw, 40px) !important;
-  line-height: 1.2 !important;
-  margin: 0 0 8px 0 !important;
-  color: #fff !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-weight: 600 !important;
+  font-size: clamp(24px, 3.5vw, 40px);
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
 }
 
 .reveal h2 {
-  font-size: clamp(20px, 3vw, 32px) !important;
-  line-height: 1.2 !important;
-  margin: 0 0 8px 0 !important;
-  color: #fff !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-weight: 500 !important;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
 }
 
 .reveal h3 {
-  font-size: clamp(16px, 2.5vw, 24px) !important;
-  line-height: 1.2 !important;
-  margin: 0 0 8px 0 !important;
-  color: #88ccff !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-weight: 500 !important;
+  font-size: clamp(16px, 2.5vw, 24px);
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+  color: #88ccff;
+  width: 100%;
+  text-align: center;
+  font-weight: 500;
 }
 
 .reveal p {
-  font-size: clamp(14px, 1.8vw, 18px) !important;
-  line-height: 1.5 !important;
-  margin: 0 0 8px 0 !important;
-  color: #fff !important;
-  width: 100% !important;
-  text-align: center !important;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.5;
+  margin: 0 0 8px 0;
+  color: #fff;
+  width: 100%;
+  text-align: center;
 }
 
 /* Content containers */
 .text-container {
-  width: 100% !important;
-  max-width: 90vw !important;
-  margin: 0 auto !important;
-  text-align: center !important;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* Images */
@@ -119,98 +119,104 @@
 .meme-image,
 .modular-viz,
 .taoros-image {
-  width: 100% !important;
-  max-width: 800px !important;
-  margin: 8px auto !important;
-  text-align: center !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
+  width: 100%;
+  max-width: 1000px;
+  margin: 16px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .concept-image img,
 .meme-image img,
 .modular-viz img {
-  width: auto !important;
-  max-width: 100% !important;
-  max-height: 40vh !important;
-  object-fit: contain !important;
-  border-radius: 8px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  padding: 8px !important;
-  margin: 0 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  width: auto;
+  max-width: 100%;
+  max-height: 50vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Special handling for Taoros images */
 .taoros-image img {
-  width: auto !important;
-  max-width: 100% !important;
-  max-height: 35vh !important;
-  object-fit: contain !important;
-  border-radius: 8px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  padding: 8px !important;
-  margin: 0 auto !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
-  display: block !important;
+  width: auto;
+  max-width: 100%;
+  max-height: 30vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px;
+  margin: 0 auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  display: block;
 }
 
 /* Specific slide type adjustments */
-.donut-image img,
-.string-image img,
+.donut-image img {
+  max-height: 25vh;
+  width: auto;
+  max-width: 90%;
+}
+
 .leech-image img {
-  max-height: 35vh !important;
+  max-height: 25vh;
+  width: auto;
+  max-width: 90%;
 }
 
 /* Custom scrollbar styling */
 .reveal section::-webkit-scrollbar {
-  width: 8px !important;
-  height: 8px !important;
+  width: 8px;
+  height: 8px;
 }
 
 .reveal section::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1) !important;
-  border-radius: 4px !important;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
 }
 
 .reveal section::-webkit-scrollbar-thumb {
-  background: rgba(136, 204, 255, 0.5) !important;
-  border-radius: 4px !important;
+  background: rgba(136, 204, 255, 0.5);
+  border-radius: 4px;
 }
 
 .reveal section::-webkit-scrollbar-thumb:hover {
-  background: rgba(136, 204, 255, 0.7) !important;
+  background: rgba(136, 204, 255, 0.7);
 }
 
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .reveal section {
-    padding: 16px !important;
-    gap: 8px !important;
+    padding: 16px;
+    gap: 8px;
   }
   
   .concept-image img,
   .meme-image img,
   .modular-viz img {
-    max-height: 35vh !important;
+    max-height: 35vh;
   }
   
   .taoros-image img,
   .donut-image img,
-  .string-image img,
   .leech-image img {
-    max-height: 30vh !important;
+    max-height: 20vh;
+    max-width: 85%;
   }
 }
 
 /* Ensure proper spacing between elements */
 .reveal section > * {
-  margin-bottom: 8px !important;
+  margin-bottom: 8px;
 }
 
 .reveal section > *:last-child {
-  margin-bottom: 24px !important;
+  margin-bottom: 24px;
 }
 
 /* Large Screen Optimizations */
@@ -219,36 +225,36 @@
   .meme-image,
   .modular-viz,
   .taoros-image {
-    max-width: 50vw !important;
+    max-width: 50vw;
   }
 }
 
 /* Additional components */
 .caption {
-  font-size: clamp(12px, 1.5vw, 14px) !important;
-  color: rgba(255, 255, 255, 0.7) !important;
-  margin-top: 8px !important;
-  text-align: center !important;
-  width: 100% !important;
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  text-align: center;
+  width: 100%;
 }
 
 .math-container {
-  width: 100% !important;
-  max-width: 800px !important;
-  margin: 16px auto !important;
-  padding: 16px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border-radius: 8px !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: #88ccff !important;
-  font-size: clamp(14px, 1.8vw, 18px) !important;
-  text-align: center !important;
+  width: 100%;
+  max-width: 800px;
+  margin: 16px auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #88ccff;
+  font-size: clamp(14px, 1.8vw, 18px);
+  text-align: center;
 }
 
 .highlight {
-  color: #88ccff !important;
-  font-weight: 500 !important;
-  font-size: clamp(16px, 2vw, 20px) !important;
+  color: #88ccff;
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 20px);
 }
 
 .logo {
@@ -289,93 +295,93 @@
 
 /* Navigation Controls */
 .reveal .controls {
-  position: fixed !important;
-  bottom: 16px !important;
-  right: 16px !important;
-  display: flex !important;
-  gap: 8px !important;
-  z-index: 1000 !important;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+  z-index: 1000;
 }
 
 .reveal .controls button {
-  color: #fff !important;
-  background: rgba(0, 0, 0, 0.5) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  border-radius: 50% !important;
-  width: 40px !important;
-  height: 40px !important;
-  margin: 0 !important;
-  cursor: pointer !important;
-  transition: all 0.2s ease !important;
-  font-size: 18px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  opacity: 0.7 !important;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
 }
 
 .reveal .controls button:hover {
-  opacity: 1 !important;
-  background: rgba(0, 0, 0, 0.7) !important;
-  border-color: rgba(255, 255, 255, 0.4) !important;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* Progress bar */
 .reveal .progress {
-  position: fixed !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 2px !important;
-  background: rgba(255, 255, 255, 0.1) !important;
-  z-index: 1000 !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1000;
 }
 
 .reveal .progress span {
-  background: #88ccff !important;
+  background: #88ccff;
 }
 
 /* Headings */
 .reveal h1 {
-  font-size: clamp(24px, 5vw, 64px) !important;
-  margin: 2vh 0 !important;
-  width: 100% !important;
-  text-align: center !important;
+  font-size: clamp(24px, 5vw, 64px);
+  margin: 2vh 0;
+  width: 100%;
+  text-align: center;
 }
 
 .reveal h2 {
-  font-size: clamp(20px, 4vw, 48px) !important;
-  margin: 2vh 0 !important;
-  width: 100% !important;
-  text-align: center !important;
+  font-size: clamp(20px, 4vw, 48px);
+  margin: 2vh 0;
+  width: 100%;
+  text-align: center;
 }
 
 .reveal h3 {
-  font-size: clamp(18px, 3vw, 36px) !important;
-  color: #88ccff !important;
-  margin: 1vh 0 !important;
+  font-size: clamp(18px, 3vw, 36px);
+  color: #88ccff;
+  margin: 1vh 0;
 }
 
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .reveal section {
-    padding: 2vh 5vw !important;
+    padding: 2vh 5vw;
   }
   
   .concept-image img {
-    max-height: 50vh !important;
+    max-height: 50vh;
   }
   
   .meme-image {
-    max-height: 40vh !important;
+    max-height: 40vh;
   }
   
   .modular-viz {
-    max-height: 40vh !important;
+    max-height: 40vh;
   }
   
   .taoros-image {
-    max-height: 35vh !important;
+    max-height: 35vh;
   }
 }
 
@@ -425,13 +431,62 @@
 .reveal ul {
   list-style-type: none;
   padding: 0;
-  margin: 0.5vh 0;
+  margin: 1vh 0;
+  width: 100%;
+  max-width: 800px;
+  text-align: left;
 }
 
 .reveal li {
-  margin: 0.5vh 0;
+  margin: 12px 0;
   color: #fff;
-  font-size: clamp(14px, 2vw, 24px) !important;
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.6;
+  padding-left: 32px;
+  position: relative;
+  text-align: left;
+}
+
+.reveal li::before {
+  content: "•";
+  color: #88ccff;
+  position: absolute;
+  left: 12px;
+  top: -1px;
+  font-size: 120%;
+}
+
+/* Nested lists */
+.reveal ul ul {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-left: 24px;
+}
+
+.reveal ul ul li {
+  margin: 8px 0;
+}
+
+.reveal ul ul li::before {
+  content: "◦";
+  font-size: 100%;
+  top: 0;
+}
+
+/* Mobile adjustments for lists */
+@media (max-width: 768px) {
+  .reveal ul {
+    padding: 0 12px;
+  }
+  
+  .reveal li {
+    padding-left: 28px;
+    margin: 10px 0;
+  }
+  
+  .reveal li::before {
+    left: 8px;
+  }
 }
 
 .snowflake-container {
@@ -485,4 +540,47 @@
   .concept-image {
     max-width: 1200px;
   }
+}
+
+/* Timeline styling */
+.timeline {
+  width: 100%;
+  max-width: 1000px;
+  margin: 16px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.timeline-item .date {
+  font-size: clamp(16px, 2vw, 24px);
+  color: #88ccff;
+  font-weight: 500;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.timeline-item p:not(.date) {
+  margin: 0;
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: #fff;
+  text-align: left;
+}
+
+.timeline-image {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  margin: 0 auto;
+  display: block;
 }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    text { font-family: system-ui, -apple-system, sans-serif; }
+    .title { fill: #88ccff; font-size: 24px; }
+    .subtitle { fill: white; font-size: 18px; }
+  </style>
+  <rect width="400" height="200" fill="#1a1a1a"/>
+  <text x="50" y="80" class="title">1992</text>
+  <text x="50" y="120" class="subtitle">Borcherds publishes proof of</text>
+  <text x="50" y="150" class="subtitle">Monstrous Moonshine Conjecture</text>
+</svg> 
