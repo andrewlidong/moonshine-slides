@@ -66,7 +66,7 @@ function App() {
               Think of rotating a snowflake 60° – it looks identical after the rotation.
             </p>
             <div className="snowflake-container">
-              <img src="/snowflake.svg" alt="Rotating snowflake showing 6-fold symmetry" className="snowflake-demo" />
+              <img src="/moonshine-slides/snowflake.svg" alt="Rotating snowflake showing 6-fold symmetry" className="snowflake-demo" />
               <p className="caption">A snowflake has 6-fold rotational symmetry, and is part of the symmetry group D6</p>
             </div>
           </div>
@@ -93,7 +93,7 @@ function App() {
               In particular, there are 18 infinite families of simple groups (C groups, A Groups, Lie), but then 26 other sporadic groups
             </p>
             <div className="concept-image">
-              <img src="/group-isomorphism.svg" alt="Visualization of group isomorphism between cube rotations and permutations" />
+              <img src="/moonshine-slides/group-isomorphism.svg" alt="Visualization of group isomorphism between cube rotations and permutations" />
             </div>
 
           </div>
@@ -112,7 +112,7 @@ function App() {
               The second largest sporadic simple group is the baby monster, and there are 18 other sporadic groups that are "children" of the monster, called the happy family.  There's also 6 pariah groups.  
             </p>
             <div className="monster-family-container">
-              <img src="/monster-family.svg" alt="Monster group family tree showing the Monster, Baby Monster, Happy Family, and Pariah groups" className="monster-family" />
+              <img src="/moonshine-slides/monster-family.svg" alt="Monster group family tree showing the Monster, Baby Monster, Happy Family, and Pariah groups" className="monster-family" />
             </div>
 
           </div>
@@ -134,7 +134,7 @@ function App() {
               Think of it as a kaleidoscope pattern – but in almost two hundred thousand dimensions.
             </p>
             <div className="dimensions-container">
-              <img src="/dimensions.svg" alt="Visualization showing progression from 1D to 196,883 dimensions" className="dimensions-viz" />
+              <img src="/moonshine-slides/dimensions.svg" alt="Visualization showing progression from 1D to 196,883 dimensions" className="dimensions-viz" />
             </div>
           </div>
           <aside className="notes">
@@ -158,7 +158,7 @@ function App() {
             </p>
 
             <div className="modular-container">
-              <img src="/taoros.png" alt="Visualization of torus shapes" className="modular-viz taoros-image" />
+              <img src="/moonshine-slides/taoros.png" alt="Visualization of torus shapes" className="modular-viz taoros-image" />
             </div>
             {/* <div className="modular-container">
               <img src="/modular-pattern.svg" alt="Visualization of modular patterns" className="modular-viz" />
@@ -228,11 +228,11 @@ function App() {
             </p>
             <div className="donut-grid">
               <div className="donut-item">
-                <img src="/square-donut.jpg" alt="Square donut shape" className="donut-viz" />
+                <img src="/moonshine-slides/square-donut.jpg" alt="Square donut shape" className="donut-viz" />
                 <p className="caption">Square donut → j = 1728</p>
               </div>
               <div className="donut-item">
-                <img src="/hexagonal-donut.jpg" alt="Hexagonal donut shape" className="donut-viz" />
+                <img src="/moonshine-slides/hexagonal-donut.jpg" alt="Hexagonal donut shape" className="donut-viz" />
                 <p className="caption">Hexagonal donut → j = 0</p>
               </div>
             </div>
@@ -265,7 +265,7 @@ function App() {
             </div>
 
             <div className="concept-image">
-              <img src="/two-spiderman.jpg" alt="Two mathematical worlds pointing at each other" className="meme-image" />
+              <img src="/moonshine-slides/two-spiderman.jpg" alt="Two mathematical worlds pointing at each other" className="meme-image" />
             </div>
           </div>
         </section>
@@ -290,7 +290,7 @@ function App() {
               called "McKay–Thompson series."
             </p>
             <div className="concept-image">
-              <img src="/multiple-spidermen.jpg" alt="Multiple mathematical concepts pointing at each other" className="meme-image" />
+              <img src="/moonshine-slides/multiple-spidermen.jpg" alt="Multiple mathematical concepts pointing at each other" className="meme-image" />
             </div>
           </div>
         </section>
@@ -311,7 +311,7 @@ function App() {
               But how does this connect to the Monster group and the j-function?
             </p>
             <div className="concept-image">
-              <img src="/string-theory.jpg" alt="String theory connection to Monster group" className="meme-image" />
+              <img src="/moonshine-slides/string-theory.jpg" alt="String theory connection to Monster group" className="meme-image" />
             </div>
             <aside className="notes">
             Proving Monstrous Moonshine was a colossal challenge – it wasn't enough to notice the patterns; 
@@ -343,7 +343,7 @@ function App() {
           </div>
 
             <div className="concept-image">
-              <img src="/leech-lattice.png" alt="Visualization of the Leech lattice pattern" className="meme-image" />
+              <img src="/moonshine-slides/leech-lattice.png" alt="Visualization of the Leech lattice pattern" className="meme-image" />
             </div>
           <aside className="notes">
             Then in 1992, Richard Borcherds achieved a breakthrough by connecting the problem to string 
@@ -440,7 +440,7 @@ function App() {
               </li>
             </ul>
             <p>
-            The term “moonshine” itself, once used jokingly, has become a proud badge for an entire research area. 
+            The term "moonshine" itself, once used jokingly, has become a proud badge for an entire research area. 
             </p>
           </div>
         </section>
@@ -455,7 +455,6 @@ function App() {
               <li>Why does the Monster exist in such a perfectly packaged way?</li>
               <li>Is there a unified theory connecting all moonshines?</li>
               <li>Could the Monster's 194 conjugacy classes correspond to different types of black holes?</li>
-              <li>What other mathematical "monsters" and "moonshine" await discovery?</li>
             </ul>
           </div>
           <aside className="notes">
