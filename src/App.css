@@ -114,11 +114,10 @@
   text-align: center;
 }
 
-/* Images */
+/* Base image styles */
 .concept-image,
 .meme-image,
-.modular-viz,
-.taoros-image {
+.modular-container {
   width: 100%;
   max-width: 1000px;
   margin: 16px auto;
@@ -128,9 +127,9 @@
   align-items: center;
 }
 
+/* Regular image styles */
 .concept-image img,
-.meme-image img,
-.modular-viz img {
+.meme-image img {
   width: auto;
   max-width: 100%;
   max-height: 50vh;
@@ -142,25 +141,55 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Special handling for Taoros images */
+/* Special image size overrides */
+.concept-image img[src*="two-spiderman"],
+.concept-image img[src*="multiple-spidermen"],
+.concept-image img[src*="string-theory"],
+.concept-image img[src*="leech-lattice"] {
+  max-height: 25vh;
+}
+
+/* Taoros image styles */
+.taoros-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 8px auto;
+}
+
 .taoros-image img {
-  width: auto;
-  max-width: 100%;
-  max-height: 30vh;
+  width: 100%;
+  height: auto;
+  max-height: 10vh;
   object-fit: contain;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 8px;
-  margin: 0 auto;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  display: block;
+}
+
+/* Donut grid styles */
+.donut-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+}
+
+.donut-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.donut-viz {
+  width: 300px !important;
+  height: 300px !important;
+  object-fit: contain;
 }
 
 /* Specific slide type adjustments */
 .donut-image img {
-  max-height: 25vh;
+  max-height: 3vh;
   width: auto;
-  max-width: 90%;
+  max-width: 16%;
 }
 
 .leech-image img {
@@ -577,10 +606,16 @@
   text-align: left;
 }
 
-.timeline-image {
+.modular-container {
   width: 100%;
-  height: auto;
-  max-width: 400px;
-  margin: 0 auto;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+}
+
+.modular-container img.taoros-image {
+  width: 200px !important;
+  height: 200px !important;
+  object-fit: contain;
 }
