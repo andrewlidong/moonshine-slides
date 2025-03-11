@@ -26,7 +26,7 @@
 }
 
 .reveal section {
-  padding: 32px !important;
+  padding: 24px !important;
   height: 100vh !important;
   width: 100% !important;
   display: flex !important;
@@ -35,9 +35,11 @@
   justify-content: flex-start !important;
   box-sizing: border-box !important;
   overflow-y: auto !important;
-  gap: 16px !important;
+  gap: 12px !important;
   max-width: 1200px !important;
   margin: 0 auto !important;
+  scrollbar-width: thin !important;
+  scrollbar-color: rgba(136, 204, 255, 0.5) rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Navigation arrows */
@@ -119,7 +121,7 @@
 .taoros-image {
   width: 100% !important;
   max-width: 800px !important;
-  margin: 16px auto !important;
+  margin: 8px auto !important;
   text-align: center !important;
   display: flex !important;
   flex-direction: column !important;
@@ -128,11 +130,10 @@
 
 .concept-image img,
 .meme-image img,
-.modular-viz img,
-.taoros-image img {
+.modular-viz img {
   width: auto !important;
   max-width: 100% !important;
-  max-height: 45vh !important;
+  max-height: 40vh !important;
   object-fit: contain !important;
   border-radius: 8px !important;
   background: rgba(255, 255, 255, 0.03) !important;
@@ -141,26 +142,75 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
+/* Special handling for Taoros images */
+.taoros-image img {
+  width: auto !important;
+  max-width: 100% !important;
+  max-height: 35vh !important;
+  object-fit: contain !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  padding: 8px !important;
+  margin: 0 auto !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+  display: block !important;
+}
+
+/* Specific slide type adjustments */
+.donut-image img,
+.string-image img,
+.leech-image img {
+  max-height: 35vh !important;
+}
+
+/* Custom scrollbar styling */
+.reveal section::-webkit-scrollbar {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.reveal section::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
+}
+
+.reveal section::-webkit-scrollbar-thumb {
+  background: rgba(136, 204, 255, 0.5) !important;
+  border-radius: 4px !important;
+}
+
+.reveal section::-webkit-scrollbar-thumb:hover {
+  background: rgba(136, 204, 255, 0.7) !important;
+}
+
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .reveal section {
-    padding: 24px 16px !important;
-    gap: 12px !important;
+    padding: 16px !important;
+    gap: 8px !important;
   }
   
   .concept-image img,
   .meme-image img,
-  .modular-viz img,
-  .taoros-image img {
-    max-height: 40vh !important;
-    padding: 4px !important;
+  .modular-viz img {
+    max-height: 35vh !important;
   }
+  
+  .taoros-image img,
+  .donut-image img,
+  .string-image img,
+  .leech-image img {
+    max-height: 30vh !important;
+  }
+}
 
-  .reveal .controls button {
-    width: 40px !important;
-    height: 40px !important;
-    font-size: 20px !important;
-  }
+/* Ensure proper spacing between elements */
+.reveal section > * {
+  margin-bottom: 8px !important;
+}
+
+.reveal section > *:last-child {
+  margin-bottom: 24px !important;
 }
 
 /* Large Screen Optimizations */
@@ -424,131 +474,6 @@
   height: auto;
   max-height: 45vh;
   object-fit: contain;
-}
-
-/* Custom scrollbar for better visibility */
-.reveal section::-webkit-scrollbar {
-  width: 8px;
-}
-
-.reveal section::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-.reveal section::-webkit-scrollbar-thumb {
-  background: rgba(136, 204, 255, 0.5);
-  border-radius: 4px;
-}
-
-.reveal section::-webkit-scrollbar-thumb:hover {
-  background: rgba(136, 204, 255, 0.7);
-}
-
-/* Make sure images don't overflow */
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.dimensions-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 2vh auto;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.dimensions-viz {
-  width: 100%;
-  height: auto;
-  max-height: 45vh;
-  object-fit: contain;
-}
-
-.modular-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 2vh auto;
-  text-align: center;
-  flex-shrink: 0;
-}
-
-.video-container {
-  width: 100% !important;
-  max-width: 800px !important;
-  margin: 16px auto !important;
-  position: relative !important;
-  padding-bottom: 56.25% !important;
-  height: 0 !important;
-  overflow: hidden !important;
-  border-radius: 8px !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-}
-
-.video-container iframe {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  border: none !important;
-}
-
-.coincidence-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin: 1vh auto;  /* Reduced from 1.5vh */
-  gap: 2vw;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.coincidence-item {
-  flex: 1;
-  min-width: 200px;  /* Ensure items don't get too narrow */
-  text-align: center;
-  padding: 1.5vh;  /* Reduced padding */
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 8px;
-  border: 1px solid rgba(136, 204, 255, 0.3);
-}
-
-.highlight {
-  color: #88ccff !important;
-  font-weight: bold;
-  font-size: clamp(20px, 3.5vh, 32px) !important;
-}
-
-.timeline {
-  width: 100% !important;
-  max-width: 800px !important;
-  margin: 16px auto !important;
-  display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
-  gap: 16px !important;
-}
-
-.timeline-item {
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 8px !important;
-  padding: 16px !important;
-}
-
-.date {
-  color: #88ccff !important;
-  font-weight: 500 !important;
-  font-size: clamp(14px, 1.8vw, 16px) !important;
-  margin-bottom: 8px !important;
-}
-
-.math-container.highlight {
-  font-size: clamp(20px, 3.5vh, 32px);  /* Slightly reduced size */
-  font-weight: bold;
-  background: rgba(136, 204, 255, 0.1);
-  border: 1px solid rgba(136, 204, 255, 0.3);
 }
 
 /* Media queries for different screen sizes */
