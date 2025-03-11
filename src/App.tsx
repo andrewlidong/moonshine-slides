@@ -418,9 +418,6 @@ function App() {
               <li>There are 194 natural conjugacy classes of the monster and 194 types of black holes in some theoretical models.  Is this a coincidence?</li>
 
             </ul>
-            <p>
-              Could this once "crazy" mathematical idea tell us something fundamental about the universe?
-            </p>
           </div>
         </section>
 
