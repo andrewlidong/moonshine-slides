@@ -1,14 +1,5 @@
-/* Reset and base styles */
-#root {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background: #000;
-}
+/* ===== Base reveal.js setup ===== */
 
-/* Basic reveal.js overrides */
 .reveal {
   width: 100vw;
   height: 100vh;
@@ -28,7 +19,7 @@
 }
 
 .reveal section {
-  padding: 40px;
+  padding: 30px 40px;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -36,332 +27,24 @@
   align-items: center;
   justify-content: flex-start;
   box-sizing: border-box;
-  overflow-y: auto;
-  gap: 40px;
+  overflow: hidden;
+  gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  scrollbar-width: thin;
-  scrollbar-color: rgba(136, 204, 255, 0.5) rgba(255, 255, 255, 0.1);
 }
 
-/* Navigation arrows */
-.reveal .controls {
-  color: #88ccff;
-}
-
-.reveal .controls .navigate-left,
-.reveal .controls .navigate-right,
-.reveal .controls .navigate-up,
-.reveal .controls .navigate-down {
-  opacity: 0.8;
-}
-
-.reveal .controls .navigate-left:hover,
-.reveal .controls .navigate-right:hover,
-.reveal .controls .navigate-up:hover,
-.reveal .controls .navigate-down:hover {
-  opacity: 1;
-}
-
-/* Progress bar */
-.reveal .progress {
-  color: #88ccff;
-}
-
-/* Typography */
-.reveal h1 {
-  font-size: clamp(32px, 5vw, 64px);
-  margin: 4vh 0;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.reveal h2 {
-  font-size: clamp(24px, 4vw, 48px);
-  margin: 3vh 0;
-  letter-spacing: -0.01em;
-  font-weight: 600;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-}
-
-.reveal h3 {
-  font-size: clamp(20px, 3vw, 36px);
-  margin: 2vh 0;
-  color: #88ccff;
-  font-weight: 500;
-  text-shadow: 0 0 10px rgba(136, 204, 255, 0.3);
-}
-
-.reveal p:not(.date):not(.caption) {
-  margin: 2vh 0;
-  line-height: 1.8;
-  margin: 20px 0;
-  line-height: 1.7;
-  font-size: clamp(14px, 1.8vw, 18px);
-  color: #fff;
-  width: 100%;
-  text-align: center;
-}
-
-/* Content containers */
-.text-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 20px auto;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* Base image styles */
-.concept-image,
-.meme-image,
-.modular-container {
-  width: 100%;
-  max-width: 1000px;
-  margin: 16px auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Regular image styles */
-.concept-image img,
-.meme-image img {
-  width: auto;
-  max-width: 100%;
-  max-height: 50vh;
-  object-fit: contain;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 8px;
-  margin: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Special image size overrides */
-.concept-image img[src*="two-spiderman"],
-.concept-image img[src*="multiple-spidermen"],
-.concept-image img[src*="string-theory"],
-.concept-image img[src*="leech-lattice"] {
-  max-height: 25vh;
-}
-
-/* Taoros image styles */
-.taoros-image {
-  width: 100%;
-  max-width: 400px;
-  margin: 8px auto;
-}
-
-.taoros-image img {
-  width: 100%;
-  height: auto;
-  max-height: 10vh;
-  object-fit: contain;
-}
-
-/* Donut grid styles */
-.donut-grid {
-  display: flex;
-  gap: 16px;
+/* Title slide — vertically centered */
+.reveal section:first-child {
   justify-content: center;
-  align-items: center;
-  margin: 8px auto;
 }
 
-.donut-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-}
-
-.donut-viz {
-  width: 300px !important;
-  height: 300px !important;
-  object-fit: contain;
-}
-
-/* Specific slide type adjustments */
-.donut-image img {
-  max-height: 3vh;
-  width: auto;
-  max-width: 16%;
-}
-
-.leech-image img {
-  max-height: 25vh;
-  width: auto;
-  max-width: 90%;
-}
-
-/* Custom scrollbar styling */
+/* Hide scrollbars */
 .reveal section::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  display: none;
 }
 
-.reveal section::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
+/* ===== Navigation controls ===== */
 
-.reveal section::-webkit-scrollbar-thumb {
-  background: rgba(136, 204, 255, 0.5);
-  border-radius: 4px;
-}
-
-.reveal section::-webkit-scrollbar-thumb:hover {
-  background: rgba(136, 204, 255, 0.7);
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .reveal section {
-    padding: 16px;
-    gap: 24px;
-  }
-  
-  .concept-image img,
-  .meme-image img,
-  .modular-viz img {
-    max-height: 35vh;
-  }
-  
-  .taoros-image img,
-  .donut-image img,
-  .leech-image img {
-    max-height: 20vh;
-    max-width: 85%;
-  }
-  
-  .snowflake-demo {
-    width: min(250px, 25vh);
-    height: min(250px, 25vh);
-  }
-  
-  .modular-container img.taoros-image {
-    width: 300px !important;
-    height: 300px !important;
-  }
-
-  .reveal .controls {
-    bottom: 24px;
-    right: 24px;
-    gap: 16px;
-  }
-
-  .reveal .controls button {
-    width: 48px;
-    height: 48px;
-    opacity: 0.9;
-    background: rgba(0, 0, 0, 0.7);
-    border: 2px solid rgba(136, 204, 255, 0.3);
-  }
-
-  .reveal .controls button:hover {
-    opacity: 1;
-    border-color: rgba(136, 204, 255, 0.5);
-  }
-
-  /* Make progress bar more visible on mobile */
-  .reveal .progress {
-    height: 4px;
-  }
-}
-
-/* Ensure proper spacing between elements */
-.reveal section > * {
-  margin-bottom: 8px;
-}
-
-.reveal section > *:last-child {
-  margin-bottom: 24px;
-}
-
-/* Large Screen Optimizations */
-@media (min-width: 1440px) {
-  .concept-image,
-  .meme-image,
-  .modular-viz,
-  .taoros-image {
-    max-width: 50vw;
-  }
-}
-
-/* Additional components */
-.caption {
-  font-size: clamp(12px, 1.5vw, 14px);
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 8px;
-  text-align: center;
-  width: 100%;
-}
-
-.math-container {
-  width: 100%;
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 10px;
-  border: 1px solid rgba(136, 204, 255, 0.15);
-  color: #88ccff;
-  font-size: clamp(14px, 1.8vw, 18px);
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.math-container:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(136, 204, 255, 0.25);
-}
-
-.highlight {
-  color: #88ccff;
-  font-weight: 500;
-  font-size: clamp(16px, 2vw, 20px);
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-/* Navigation Controls */
 .reveal .controls {
   position: fixed;
   bottom: 16px;
@@ -369,6 +52,7 @@
   display: flex;
   gap: 8px;
   z-index: 1000;
+  color: #88ccff;
 }
 
 .reveal .controls button {
@@ -394,7 +78,8 @@
   border-color: rgba(255, 255, 255, 0.4);
 }
 
-/* Progress bar */
+/* ===== Progress bar ===== */
+
 .reveal .progress {
   position: fixed;
   bottom: 0;
@@ -403,103 +88,73 @@
   height: 2px;
   background: rgba(255, 255, 255, 0.1);
   z-index: 1000;
+  color: #88ccff;
 }
 
 .reveal .progress span {
   background: #88ccff;
 }
 
-/* Headings */
+/* ===== Typography ===== */
+
 .reveal h1 {
-  font-size: clamp(24px, 5vw, 64px);
+  font-size: clamp(32px, 5vw, 64px);
   margin: 2vh 0;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   width: 100%;
   text-align: center;
 }
 
 .reveal h2 {
-  font-size: clamp(20px, 4vw, 48px);
-  margin: 2vh 0;
+  font-size: clamp(22px, 4vw, 44px);
+  margin: 1vh 0;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   width: 100%;
   text-align: center;
 }
 
 .reveal h3 {
   font-size: clamp(18px, 3vw, 36px);
-  color: #88ccff;
   margin: 1vh 0;
+  color: #88ccff;
+  font-weight: 500;
+  text-shadow: 0 0 10px rgba(136, 204, 255, 0.3);
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .reveal section {
-    padding: 2vh 5vw;
-  }
-  
-  .concept-image img {
-    max-height: 50vh;
-  }
-  
-  .meme-image {
-    max-height: 40vh;
-  }
-  
-  .modular-viz {
-    max-height: 40vh;
-  }
-  
-  .taoros-image {
-    max-height: 35vh;
-  }
-}
-
-/* Ensure proper spacing in fullscreen */
-.reveal.has-vertical-slides {
-  padding-bottom: 8vh;
-}
-
-/* Make sure slides are visible in fullscreen */
-.reveal.has-horizontal-slides {
-  padding-right: 8vw;
-}
-
-/* Adjust heading sizes for fullscreen */
-.reveal h1 {
-  font-size: clamp(24px, 5vw, 64px);
-  margin: 2vh 0;
+.reveal p:not(.date):not(.caption) {
+  margin: 12px 0;
+  line-height: 1.7;
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: #fff;
   width: 100%;
   text-align: center;
 }
 
-.reveal h2 {
-  font-size: clamp(20px, 4vw, 48px);
-  margin: 2vh 0;
-  width: 100%;
-  text-align: center;
+.reveal section > * {
+  margin-bottom: 4px;
 }
 
-/* Ensure proper spacing at slide bottom */
-.reveal section:last-child {
-  margin-bottom: 0;
-  padding-bottom: 8vh;
+.reveal section > *:last-child {
+  margin-bottom: 16px;
 }
 
-/* Adjust slide layout */
-.reveal section::-webkit-scrollbar {
-  display: none;  /* Hide scrollbar for Chrome, Safari and Opera */
-}
+/* ===== Lists ===== */
 
 .reveal ul {
   list-style-type: none;
   padding: 0;
   margin: 1vh 0;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   text-align: left;
 }
 
 .reveal li {
-  margin: 16px 0;
+  margin: 12px 0;
   color: #fff;
   font-size: clamp(14px, 1.8vw, 18px);
   line-height: 1.6;
@@ -509,7 +164,7 @@
 }
 
 .reveal li::before {
-  content: "•";
+  content: "\2022";
   color: #88ccff;
   position: absolute;
   left: 12px;
@@ -517,7 +172,6 @@
   font-size: 120%;
 }
 
-/* Nested lists */
 .reveal ul ul {
   margin-top: 8px;
   margin-bottom: 8px;
@@ -529,36 +183,98 @@
 }
 
 .reveal ul ul li::before {
-  content: "◦";
+  content: "\25E6";
   font-size: 100%;
   top: 0;
 }
 
-/* Mobile adjustments for lists */
-@media (max-width: 768px) {
-  .reveal ul {
-    padding: 0 12px;
-  }
-  
-  .reveal li {
-    padding-left: 28px;
-    margin: 10px 0;
-  }
-  
-  .reveal li::before {
-    left: 8px;
-  }
+/* ===== Content containers ===== */
+
+.text-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
+.math-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 12px auto;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(136, 204, 255, 0.15);
+  color: #88ccff;
+  font-size: clamp(14px, 1.8vw, 18px);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.math-container:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(136, 204, 255, 0.25);
+}
+
+.highlight {
+  color: #88ccff;
+  font-weight: 500;
+  font-size: clamp(16px, 2vw, 20px);
+}
+
+.caption {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  text-align: center;
+  width: 100%;
+}
+
+/* ===== Image styles ===== */
+
+.concept-image,
+.meme-image,
+.modular-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 8px auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.concept-image img,
+.meme-image img {
+  width: auto;
+  max-width: 100%;
+  max-height: 30vh;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px;
+  margin: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.concept-image img[src*="two-spiderman"],
+.concept-image img[src*="multiple-spidermen"],
+.concept-image img[src*="string-theory"],
+.concept-image img[src*="leech-lattice"] {
+  max-height: 22vh;
+}
+
+/* Snowflake */
 .snowflake-container {
-  margin: 2vh auto;
+  margin: 1vh auto;
   text-align: center;
   flex-shrink: 0;
 }
 
 .snowflake-demo {
-  width: min(300px, 30vh);
-  height: min(300px, 30vh);
+  width: min(250px, 25vh);
+  height: min(250px, 25vh);
   margin: 0 auto;
   transition: transform 0.3s ease;
 }
@@ -567,6 +283,7 @@
   transform: scale(1.05);
 }
 
+/* Monster family tree */
 .monster-family-container {
   width: 100%;
   max-width: 800px;
@@ -578,44 +295,130 @@
 .monster-family {
   width: 100%;
   height: auto;
-  max-height: 45vh;
+  max-height: 35vh;
   object-fit: contain;
 }
 
-.group-table-container {
+/* Dimensions visualization */
+.dimensions-container {
   width: 100%;
   max-width: 800px;
   margin: 1vh auto;
   text-align: center;
-  flex-shrink: 0;
 }
 
-.group-table {
+.dimensions-viz {
   width: 100%;
   height: auto;
-  max-height: 45vh;
+  max-height: 30vh;
   object-fit: contain;
 }
 
-/* Media queries for different screen sizes */
-@media (min-width: 1440px) {
-  .text-container {
-    max-width: 1200px;
-  }
-  
-  .concept-image {
-    max-width: 1200px;
-  }
+/* Torus / modular images */
+.modular-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
 }
 
-/* Timeline enhancements */
+.modular-container img.taoros-image {
+  width: 350px;
+  height: 350px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.modular-container img.taoros-image:hover {
+  transform: scale(1.02);
+}
+
+/* Donut grid */
+.donut-grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+}
+
+.donut-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.donut-viz {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+}
+
+/* ===== Video container ===== */
+
+.video-container {
+  width: 100%;
+  max-width: 640px;
+  margin: 8px auto;
+}
+
+.video-container iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  border-radius: 8px;
+}
+
+/* ===== Coincidence comparison ===== */
+
+.coincidence-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 2vh auto;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.coincidence-item {
+  flex: 0 1 280px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(136, 204, 255, 0.15);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.3s ease;
+}
+
+.coincidence-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(136, 204, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.coincidence-item p {
+  margin: 0;
+  font-size: clamp(14px, 1.6vw, 16px);
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+/* ===== Timeline ===== */
+
 .timeline {
   width: 100%;
   max-width: 900px;
-  margin: 24px auto;
+  margin: 16px auto;
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -626,7 +429,7 @@
   align-items: center;
   gap: 16px;
   background: rgba(255, 255, 255, 0.03);
-  padding: 16px 20px;
+  padding: 14px 18px;
   border-radius: 8px;
   border: 1px solid rgba(136, 204, 255, 0.1);
   min-width: 200px;
@@ -654,90 +457,93 @@
   font-size: clamp(13px, 1.6vw, 16px);
   color: rgba(255, 255, 255, 0.9);
   text-align: left;
-  padding-left: 0;
   line-height: 1.5;
 }
 
-.modular-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 8px auto;
-}
-
-.modular-container img.taoros-image {
-  width: 400px !important;
-  height: 400px !important;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.modular-container img.taoros-image:hover {
-  transform: scale(1.02);
-}
-
-/* Monster group and mathematical concept images */
-.concept-image img[src*="monster-group-order"],
-.concept-image img[src*="196883-dimensions"] {
-  max-height: 12.5vh;
-  transition: all 0.3s ease;
-}
-
-/* Coincidence comparison styles */
-.coincidence-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 3vh auto;
-  display: flex;
-  justify-content: center;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-
-.coincidence-item {
-  flex: 1 1 300px;
-  min-width: 300px;
-  max-width: 400px;
-  padding: 24px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(136, 204, 255, 0.15);
-  border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  transition: all 0.3s ease;
-}
-
-.coincidence-item:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(136, 204, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-.coincidence-item .moonshine-number {
-  font-size: clamp(24px, 4vw, 36px);
-  font-weight: 600;
-  color: #88ccff;
-  text-shadow: 0 0 10px rgba(136, 204, 255, 0.3);
-}
-
-.coincidence-item p {
-  margin: 0;
-  font-size: clamp(14px, 1.6vw, 16px);
-  color: rgba(255, 255, 255, 0.9);
-  text-align: center;
-}
+/* ===== Mobile (max-width: 768px) ===== */
 
 @media (max-width: 768px) {
-  .coincidence-container {
-    gap: 24px;
+  .reveal section {
+    padding: 16px;
+    gap: 16px;
   }
-  
+
+  .concept-image img,
+  .meme-image img {
+    max-height: 25vh;
+  }
+
+  .snowflake-demo {
+    width: min(200px, 20vh);
+    height: min(200px, 20vh);
+  }
+
+  .modular-container img.taoros-image {
+    width: 250px;
+    height: 250px;
+  }
+
+  .donut-viz {
+    width: 160px;
+    height: 160px;
+  }
+
+  .reveal ul {
+    padding: 0 12px;
+  }
+
+  .reveal li {
+    padding-left: 28px;
+    margin: 10px 0;
+  }
+
+  .reveal li::before {
+    left: 8px;
+  }
+
+  .coincidence-container {
+    gap: 16px;
+  }
+
   .coincidence-item {
     flex: 1 1 100%;
-    min-width: 250px;
-    padding: 20px;
+    padding: 16px;
+  }
+
+  .reveal .controls {
+    bottom: 24px;
+    right: 24px;
+    gap: 16px;
+  }
+
+  .reveal .controls button {
+    width: 48px;
+    height: 48px;
+    opacity: 0.9;
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid rgba(136, 204, 255, 0.3);
+  }
+
+  .reveal .controls button:hover {
+    opacity: 1;
+    border-color: rgba(136, 204, 255, 0.5);
+  }
+
+  .reveal .progress {
+    height: 4px;
+  }
+}
+
+/* ===== Large screens (min-width: 1440px) ===== */
+
+@media (min-width: 1440px) {
+  .text-container {
+    max-width: 1100px;
+  }
+
+  .concept-image,
+  .meme-image,
+  .modular-container {
+    max-width: 1000px;
   }
 }
