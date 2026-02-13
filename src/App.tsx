@@ -207,13 +207,11 @@ function App() {
               That's what the j-function does for mathematical donuts.
             </p>
             <div className="video-container">
-              <iframe 
-                width="560" 
-                height="315" 
-                src="https://www.youtube.com/embed/YkXr1ET8jWo" 
-                title="Understanding Torus Shapes" 
-                frameBorder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              <iframe
+                src="https://www.youtube.com/embed/YkXr1ET8jWo"
+                title="Understanding Torus Shapes"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen>
               </iframe>
             </div>
